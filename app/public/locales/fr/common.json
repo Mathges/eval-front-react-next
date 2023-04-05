@@ -1,0 +1,11 @@
+{
+    "home": {
+        "test": "ça c'est du francais"
+    },
+    "header": {
+        "localeSwitcher": {
+            "en": "Anglais",
+            "fr": "Francais"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "home": {
+        "test": "this is some english"
+    },
+    "header": {
+        "localeSwitcher": {
+            "en": "English",
+            "fr": "French"
+        }
+    }
+}
