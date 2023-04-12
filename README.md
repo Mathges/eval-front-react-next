@@ -27,12 +27,12 @@ Auth will not be declined, cause the in the API, users and companies are in the 
 
 ## TODO:
 
-- [ ] wireframes
+- [ ] wireframes (started, will do progressively)
 - [x] react-next init
 - [ ] connect front and back
 - [ ] headers footer and layout inits
 - [ ] sign in/up feature
 - [ ] search feature
-- [ ] theming and theme switcher feature
-- [ ] i18n and lang switcher feature
+- [x] theming and theme switcher feature init
+- [x] i18n and lang switcher feature init
 - [ ]
