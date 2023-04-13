@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] });
 
-// In this layout I define global things like thme, fonts... because it will be used on whole app
+// In this layout I define global things like theme, fonts... because it will be used on whole app
 const DefaultLayout = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 

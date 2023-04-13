@@ -25,7 +25,7 @@ const Index = () => {
 Index.getLayout = (page) => {
   return (
     <DefaultLayout>
-      <Admin>{page}</Admin>
+      {page}
     </DefaultLayout>
   )
 }

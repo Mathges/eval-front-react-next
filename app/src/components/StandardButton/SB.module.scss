@@ -1,0 +1,15 @@
+.button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  width: 75px;
+  height: 30px;
+  font-size: 1.1em;
+  margin: 5px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--primary-hover-color);
+  }
+}

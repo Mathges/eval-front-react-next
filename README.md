@@ -35,4 +35,4 @@ Auth will not be declined, cause the in the API, users and companies are in the 
 - [ ] search feature
 - [x] theming and theme switcher feature init
 - [x] i18n and lang switcher feature init
-- [ ]
+- [ ] generic components
