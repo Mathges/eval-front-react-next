@@ -1,0 +1,28 @@
+.header {
+  max-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+
+  .banner {
+    display: flex;
+    align-items: center;
+
+    * {
+      margin: 3px;
+
+      &.title {
+        color: var(--text-color);
+      }
+    }
+  }
+
+  .header_actions {
+    display: flex;
+    align-items: center;
+
+    >* {
+      margin: 10px;
+    } 
+  }
+}

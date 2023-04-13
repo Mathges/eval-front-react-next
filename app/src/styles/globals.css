@@ -1,7 +1,8 @@
 .light {
-  --primary-color: #f49f3e;
-  --background-color: #fef9f3;
-  --text-color: #333333;
+  --primary-color: #fea400;
+  --accent-color: #d12f00;
+  --background-color: #ddd;
+  --text-color: #2e2e2e;
 }
 
 .dark {
