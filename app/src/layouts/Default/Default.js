@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '@/components/partials/Header/Header';
 import styles from './Default.module.scss';
-import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,6 +10,7 @@ const DefaultLayout = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const bodyClassName = isDarkMode ? 'dark' : 'light';
+
   return (
     <div className={`${bodyClassName} ${styles.container} ${inter.className}`}>
       <Header theme={isDarkMode} setTheme={setIsDarkMode} />

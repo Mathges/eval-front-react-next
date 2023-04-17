@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 6px;
+  color: var(--text-primary-color);
+
+  input {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    height: 30px;
+
+    &:focus {
+      border: 3px solid var(--primary-color);
+      outline: 0;
+    }
+  }
+}

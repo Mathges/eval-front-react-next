@@ -1,8 +1,9 @@
 .light {
   --primary-color: #fea400;
   --primary-hover-color: #fea50079;
-  --accent-color: #d12f00;
-  --background-color: #ddd;
+  --accent-color: #e27000;
+  --background-color: #eee;
+  --background-form-color: #fff;
   --text-color: #2e2e2e;
 }
 

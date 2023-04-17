@@ -7,5 +7,23 @@
             "en": "Anglais",
             "fr": "Francais"
         }
+    },
+    "form": {
+        "inputs": {
+            "labels": {
+                "email": "Email",
+                "password": "Mot de Passe"
+            },
+            "placeholders": {
+                "email": "Entrez votre email",
+                "password": "Entrez votre mot de passe"
+            }
+        },
+        "titles": {
+            "login": "Connexion"
+        }
+    },
+    "buttons": {
+        "login": "Se connecter"
     }
 }

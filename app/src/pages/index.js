@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import DefaultLayout from '@/layouts/Default/Default';
-import Admin from '@/layouts/Admin/Admin';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -18,7 +17,7 @@ const Index = () => {
   const { t } = useTranslation('common');
 
   return (
-    <p>Index</p>
+    <p>{t('home.test')}</p>
   );
 }
 
