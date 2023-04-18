@@ -5,7 +5,7 @@ const MyApp = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout || ((page) => page);
 
   return getLayout(
-    <main class="global_container">
+    <main className="global_container">
       <Component {...pageProps} />
     </main>
   )

@@ -12,19 +12,41 @@
         "inputs": {
             "labels": {
                 "email": "Email",
-                "password": "Mot de Passe"
+                "password": "Mot de Passe",
+                "firstName": "Prénom",
+                "lastName": "Nom",
+                "address": "Addresse",
+                "zipcode": "Code Postal",
+                "city": "Ville",
+                "confirmPassword": "Confirmer Mot de Passe"
             },
             "placeholders": {
                 "email": "Entrez votre email",
-                "password": "Entrez votre mot de passe"
+                "password": "Entrez votre mot de passe",
+                "firstName": "Prénom",
+                "lastName": "Nom",
+                "address": "Addresse",
+                "zipcode": "Code Postal",
+                "city": "Ville",
+                "confirmPassword": "Confirmer Mot de Passe"
             }
         },
         "titles": {
-            "login": "Connexion"
-        }
+            "login": "Se connecter",
+            "register": "S'inscrire"
+        },
+        "passwordRules": {
+            "characterLimit": "Le mot de passe doit contenir au moins 12 caractères",
+            "characterTypes": "Il doit aussi avoir 1 majuscule, 1 chiffre et un caractère spécial"
+        },
+        "question": "Êtes vous un Freelance ou une Entreprise?"
     },
     "buttons": {
-        "login": "Se connecter"
+        "login": "Se connecter",
+        "register": {
+            "freelance": "Freelance",
+            "company": "Entreprise"
+        }
     },
     "links": {
         "to-register": "Pas encore inscrit ? C'est par ici !"

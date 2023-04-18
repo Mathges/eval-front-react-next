@@ -12,19 +12,41 @@
         "inputs": {
             "labels": {
                 "email": "Email",
-                "password": "Password"
+                "password": "Password",
+                "firstName": "Firstname",
+                "lastName": "Lastname",
+                "address": "Address",
+                "zipcode": "Zipcode",
+                "city": "City",
+                "confirmPassword": "Confirm Password"
             },
             "placeholders": {
                 "email": "Enter your email",
-                "password": "Enter your password"
+                "password": "Enter your password",
+                "firstName": "Firstname",
+                "lastName": "Lastname",
+                "address": "Address",
+                "zipcode": "Zipcode",
+                "city": "City",
+                "confirmPassword": "Confirm Password"
             }
         },
         "titles": {
-            "login": "Sign In"
-        }
+            "login": "Sign In",
+            "register": "Sign Up"
+        },
+        "passwordRules": {
+            "characterLimit": "Password should contain at least 12 characters",
+            "characterTypes": "1 capital, 1 digit and 1 special character too"
+        },
+        "question": "Are you a freelance or a company ?"
     },
     "buttons": {
-        "login": "Login"
+        "login": "Login",
+        "register": {
+            "freelance": "Freelance",
+            "company": "Company"
+        }
     },
     "links": {
         "to-register": "Not registered yet ? Let's go !"

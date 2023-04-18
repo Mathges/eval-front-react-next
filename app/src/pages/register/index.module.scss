@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .inline_inputs {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .form_bottom {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+
+    .password_rules {
+      max-width: 50%;
+      font-size: 0.8em;
+    }
+
+    .next_icon {
+      &:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+      }
+    }
+  }
+
+}

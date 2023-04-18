@@ -30,9 +30,10 @@ Auth will not be declined, cause the in the API, users and companies are in the 
 - [ ] wireframes (started, will do progressively)
 - [x] react-next init
 - [ ] connect front and back
-- [ ] headers footer and layout inits (header init, nested layouts init)
+- [ ] headers footer and layout inits (header done, nested layouts done)
 - [ ] sign in/up feature
 - [ ] search feature
 - [x] theming and theme switcher feature init
 - [x] i18n and lang switcher feature init
-- [ ] generic components
+- [x] generic components
+- [ ] integrate reset password to WFs and app
