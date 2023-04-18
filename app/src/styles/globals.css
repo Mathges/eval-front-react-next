@@ -13,6 +13,10 @@
   --text-color: #dadada;
 }
 
+.global_container {
+  height: calc(100vh - 75px); /* viewport height minus header size*/
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -22,7 +26,9 @@
 html,
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
   background-color: var(--background-color);
+  min-height: 100vh;
 }
 
 body {

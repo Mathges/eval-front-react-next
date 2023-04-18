@@ -25,5 +25,8 @@
     },
     "buttons": {
         "login": "Login"
+    },
+    "links": {
+        "to-register": "Not registered yet ? Let's go !"
     }
 }

@@ -25,5 +25,8 @@
     },
     "buttons": {
         "login": "Se connecter"
+    },
+    "links": {
+        "to-register": "Pas encore inscrit ? C'est par ici !"
     }
 }

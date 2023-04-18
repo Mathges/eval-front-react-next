@@ -4,6 +4,7 @@ import GenericForm from '@/components/GenericForm/GenericForm';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import styles from './index.module.scss';
+import GenericLink from '@/components/GenericLink/GenericLink';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -24,7 +25,15 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
-      <GenericForm onSubmit={submit} width={"30%"} title={t("form.titles.login")} />
+      <GenericForm
+        onSubmit={submit}
+        width={"30%"}
+        title={t("form.titles.login")}
+      />
+      <GenericLink
+        link={"/register"}
+        content={t("links.to-register")}
+      />
     </div>
   );
 }

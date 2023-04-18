@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: 6px;
   color: var(--text-primary-color);
+  user-select: none;
 
   input {
     border: 2px solid var(--primary-color);
