@@ -18,7 +18,11 @@
                 "address": "Address",
                 "zipcode": "Zipcode",
                 "city": "City",
-                "confirmPassword": "Confirm Password"
+                "confirmPassword": "Confirm Password",
+                "socialReason": "Social Reason",
+                "status": "Status",
+                "siret": "Siret",
+                "headOfficeAddress": "Head Office Address"
             },
             "placeholders": {
                 "email": "Enter your email",
@@ -28,7 +32,11 @@
                 "address": "Address",
                 "zipcode": "Zipcode",
                 "city": "City",
-                "confirmPassword": "Confirm Password"
+                "confirmPassword": "Confirm Password",
+                "socialReason": "Social Reason",
+                "status": "ex SARL, EURL...",
+                "siret": "Siret",
+                "headOfficeAddress": "Head Office Address"
             }
         },
         "titles": {
@@ -36,6 +44,7 @@
             "register": "Sign Up"
         },
         "passwordRules": {
+            "noMatch": "Passwords don't match",
             "characterLimit": "Password should contain at least 12 characters",
             "characterTypes": "1 capital, 1 digit and 1 special character too"
         },
@@ -45,7 +54,8 @@
         "login": "Login",
         "register": {
             "freelance": "Freelance",
-            "company": "Company"
+            "company": "Company",
+            "register": "Sign Up"
         }
     },
     "links": {

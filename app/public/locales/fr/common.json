@@ -18,7 +18,11 @@
                 "address": "Addresse",
                 "zipcode": "Code Postal",
                 "city": "Ville",
-                "confirmPassword": "Confirmer Mot de Passe"
+                "confirmPassword": "Confirmer Mot de Passe",
+                "socialReason": "Raison Sociale",
+                "status": "Statut",
+                "siret": "Siret",
+                "headOfficeAddress": "Addresse Siège Social"
             },
             "placeholders": {
                 "email": "Entrez votre email",
@@ -28,7 +32,11 @@
                 "address": "Addresse",
                 "zipcode": "Code Postal",
                 "city": "Ville",
-                "confirmPassword": "Confirmer Mot de Passe"
+                "confirmPassword": "Confirmer Mot de Passe",
+                "socialReason": "Raison Sociale",
+                "status": "ex SARL, EURL...",
+                "siret": "Siret",
+                "headOfficeAddress": "Addresse Siège Social"
             }
         },
         "titles": {
@@ -36,6 +44,7 @@
             "register": "S'inscrire"
         },
         "passwordRules": {
+            "noMatch": "Mots de passes différents",
             "characterLimit": "Le mot de passe doit contenir au moins 12 caractères",
             "characterTypes": "Il doit aussi avoir 1 majuscule, 1 chiffre et un caractère spécial"
         },
@@ -45,7 +54,8 @@
         "login": "Se connecter",
         "register": {
             "freelance": "Freelance",
-            "company": "Entreprise"
+            "company": "Entreprise",
+            "register": "S'inscrire"
         }
     },
     "links": {

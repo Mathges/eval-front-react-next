@@ -11,10 +11,22 @@
     justify-content: space-around;
   }
 
+  .password_match {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .no_match_passwords {
+      color: red;
+      font-size: 0.7em;
+    }
+  }
+  
   .form_bottom {
     width: 90%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 5px 0;
 
     .password_rules {
