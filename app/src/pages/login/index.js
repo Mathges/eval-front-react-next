@@ -24,14 +24,23 @@ const Login = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(name)
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues)
   };
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    console.log(formValues);
+    console.log('FV', formValues);
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+        method: 'POST',
+        body: JSON.stringify(formValues),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const result = await response.json();
+      console.log(result);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
