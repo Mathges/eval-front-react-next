@@ -22,7 +22,9 @@
                 "socialReason": "Social Reason",
                 "status": "Status",
                 "siret": "Siret",
-                "headOfficeAddress": "Head Office Address"
+                "headOfficeAddress": "Head Office Address",
+                "dailyTax": "dailyTax",
+                "experienceYears": "Experience Years"
             },
             "placeholders": {
                 "email": "Enter your email",

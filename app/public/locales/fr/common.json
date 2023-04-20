@@ -22,7 +22,9 @@
                 "socialReason": "Raison Sociale",
                 "status": "Statut",
                 "siret": "Siret",
-                "headOfficeAddress": "Addresse Siège Social"
+                "headOfficeAddress": "Addresse Siège Social",
+                "dailyTax": "Taux Journalier",
+                "experienceYears": "Années d'Expérience"
             },
             "placeholders": {
                 "email": "Entrez votre email",

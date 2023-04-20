@@ -20,9 +20,6 @@ const ProfileAction = () => {
     } else {
       router.push('/login');
     }
-
-
-
   }
 
   return (

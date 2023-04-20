@@ -8,7 +8,7 @@ import GenericForm from '@/components/GenericForm/GenericForm';
 import LabeledInput from '@/components/LabeledInput/LabeledInput';
 import { IoArrowForward } from 'react-icons/io5';
 import { IoArrowBack } from 'react-icons/io5';
-import GenericSelect from '@/components/GenericSelect/GenericSelect';
+import FreelanceFormCol from '@/components/FreelanceFormCol/FreelanceFormCol';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -22,7 +22,6 @@ export async function getStaticProps({ locale }) {
 
 const Register = () => {
   const { t } = useTranslation('common');
-
   const [page, setPage] = useState(1);
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [formValues, setFormValues] = useState({});
@@ -45,7 +44,14 @@ const Register = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormValues({ ...formValues, [name]: value });
+
+    if (name === "dailyTax" || name === "experienceYears") {
+      let currentState = formValues;
+      currentState.freelance = { ...currentState.freelance, [name]: value }
+      setFormValues(currentState);
+    } else {
+      setFormValues({ ...formValues, [name]: value });
+    }
   };
 
   const isFreelance = () => {
@@ -82,18 +88,12 @@ const Register = () => {
 
   const submit = (event) => {
     event.preventDefault();
-    console.log(formValues);
+    delete formValues.confirmPassword;
+    console.log('finalForm', formValues);
   }
 
   const options = ['Skill 1', 'Skill 2', 'Skill 3'];
-
-  //this one is needed because it will act on arrays, not directly on key/value pairs
-  const handleSelectChange = (event) => {
-    const { name, value } = event.target;
-    let currentState = formValues;
-    currentState.freelance[name].push(value)
-    setFormValues(currentState)
-  }
+  const options2 = ['Profession 1', 'Profession 2', 'Profession 3'];
 
   return (
     <div className={styles.container}>
@@ -215,12 +215,38 @@ const Register = () => {
         {page === 3 &&
           <>
             {formValues.freelance &&
-              <GenericSelect
-                name={"skills"}
-                value={"skills"}
-                options={options}
-                onChange={handleSelectChange}
-              />
+              <>
+                <div className={styles.inline_inputs}>
+                  <LabeledInput
+                    labelTitle={t('form.inputs.labels.dailyTax')}
+                    inputType="text"
+                    inputName="dailyTax"
+                    onChange={handleChange}
+                    width={"30%"}
+                  />
+                  <LabeledInput
+                    labelTitle={t('form.inputs.labels.experienceYears')}
+                    inputType="text"
+                    inputName="experienceYears"
+                    onChange={handleChange}
+                    width={"30%"}
+                  />
+                </div>
+                <div className={styles.selects}>
+                  <FreelanceFormCol
+                    subject={"skills"}
+                    options={options}
+                    formValues={formValues}
+                    setFormValues={setFormValues}
+                  />
+                  <FreelanceFormCol
+                    subject={"professions"}
+                    options={options2}
+                    formValues={formValues}
+                    setFormValues={setFormValues}
+                  />
+                </div>
+              </>
             }
             {formValues.company &&
               <>
