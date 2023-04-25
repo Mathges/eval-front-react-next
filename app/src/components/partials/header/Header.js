@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import Image from 'next/image';
 import styles from './header.module.scss';
-import LocaleSwitcher from '@/components/LocaleSwitcher/LocaleSwitcher';
-import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
 import { useRouter } from 'next/router';
-import ProfileAction from '@/components/ProfileAction/ProfileAction';
+import HeaderActions from '@/components/HeaderActions/HeaderActions';
+import { UserContext } from '@/contexts/UserContext';
 
 const Header = ({ theme, setTheme }) => {
   const router = useRouter();
-
-  const toggleTheme = () => {
-    setTheme(!theme);
-  };
+  const { userContext } = useContext(UserContext);
 
   const goHome = () => {
-    router.push('/')
-  }
+    router.push('/');
+  };
+
+  useEffect(() => {
+    console.log(userContext)
+  }, [userContext]);
 
   return (
     <div className={styles.header}>
@@ -23,11 +23,7 @@ const Header = ({ theme, setTheme }) => {
         <Image src="/images/logo.png" alt="brand logo" width={75} height={75} />
         <h1 className={styles.title}>FreeSearch</h1>
       </div>
-      <div className={styles.header_actions}>
-        <ProfileAction />
-        <LocaleSwitcher />
-        <ThemeSwitcher switchTheme={toggleTheme} />
-      </div>
+      <HeaderActions theme={theme} setTheme={setTheme} />
     </div>
   );
 }

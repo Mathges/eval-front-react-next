@@ -89,7 +89,7 @@ const Register = () => {
   const submit = (event) => {
     event.preventDefault();
     delete formValues.confirmPassword;
-    console.log('finalForm', formValues);
+    // console.log('finalForm', formValues);
   }
 
   const options = ['Skill 1', 'Skill 2', 'Skill 3'];

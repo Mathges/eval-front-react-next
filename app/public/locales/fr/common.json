@@ -8,6 +8,14 @@
             "fr": "Francais"
         }
     },
+    "navbar": {
+        "links": {
+            "home": "Home",
+            "proposals": "Propositions",
+            "profile": "Profil",
+            "tasks": "Contrats"
+        }
+    },
     "form": {
         "inputs": {
             "labels": {

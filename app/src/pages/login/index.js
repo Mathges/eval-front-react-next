@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import DefaultLayout from '@/layouts/Default/Default';
 import GenericForm from '@/components/GenericForm/GenericForm';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -7,6 +7,9 @@ import styles from './index.module.scss';
 import GenericLink from '@/components/GenericLink/GenericLink';
 import LabeledInput from '@/components/LabeledInput/LabeledInput';
 import StandardButton from '@/components/StandardButton/StandardButton';
+import { useRouter } from 'next/router';
+import { setCookie } from 'cookies-next';
+import { UserContext } from '@/contexts/UserContext';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -21,6 +24,8 @@ export async function getStaticProps({ locale }) {
 const Login = () => {
   const { t } = useTranslation('common');
   const [formValues, setFormValues] = useState({});
+  const router = useRouter();
+  const { userContext, setUserContext } = useContext(UserContext);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -29,15 +34,19 @@ const Login = () => {
 
   const submit = async (event) => {
     event.preventDefault();
-    console.log('FV', formValues);
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
         method: 'POST',
         body: JSON.stringify(formValues),
         headers: { 'Content-Type': 'application/json' },
       });
-      const result = await response.json();
-      console.log(result);
+      await response.json().then((result) => {
+        setCookie('token', result.token, { sameSite: 'none', secure: true });
+      }).then(() => {
+        setUserContext({ isLogged: true })
+        router.push('/profile');
+      });
+      // TODO: carefull with this in production ?
     } catch (err) {
       console.error(err);
     }
