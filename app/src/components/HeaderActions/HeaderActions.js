@@ -9,7 +9,7 @@ import { deleteCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
 const HeaderActions = ({ theme, setTheme }) => {
-  const { userContext } = useContext(UserContext);
+  const { userContext, setUserContext } = useContext(UserContext);
   const router = useRouter();
 
   const toggleTheme = () => {
@@ -19,6 +19,7 @@ const HeaderActions = ({ theme, setTheme }) => {
   const logout = () => {
     try {
       deleteCookie('token');
+      setUserContext({});
       router.push('/');
     } catch (error) {
       console.log(error)

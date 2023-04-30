@@ -26,6 +26,7 @@
                 "address": "Address",
                 "zipcode": "Zipcode",
                 "city": "City",
+                "phoneNumber": "Phone Number",
                 "confirmPassword": "Confirm Password",
                 "socialReason": "Social Reason",
                 "status": "Status",
@@ -42,6 +43,7 @@
                 "address": "Address",
                 "zipcode": "Zipcode",
                 "city": "City",
+                "phoneNumber": "Phone Number",
                 "confirmPassword": "Confirm Password",
                 "socialReason": "Social Reason",
                 "status": "ex SARL, EURL...",
@@ -58,7 +60,8 @@
             "characterLimit": "Password should contain at least 12 characters",
             "characterTypes": "1 capital, 1 digit and 1 special character too"
         },
-        "question": "Are you a freelance or a company ?"
+        "question": "Are you a freelance or a company ?",
+        "confirmEmail": "Successful register, a mail has been sent to the email provided to confirm inscription"
     },
     "buttons": {
         "login": "Login",

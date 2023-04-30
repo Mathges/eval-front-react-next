@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import DefaultLayout from '@/layouts/Default/Default';
 import GenericForm from '@/components/GenericForm/GenericForm';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -10,6 +10,7 @@ import StandardButton from '@/components/StandardButton/StandardButton';
 import { useRouter } from 'next/router';
 import { setCookie } from 'cookies-next';
 import { UserContext } from '@/contexts/UserContext';
+import useApi from '@/hooks/useApi';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -25,32 +26,30 @@ const Login = () => {
   const { t } = useTranslation('common');
   const [formValues, setFormValues] = useState({});
   const router = useRouter();
-  const { userContext, setUserContext } = useContext(UserContext);
+  const { setUserContext } = useContext(UserContext);
+  const { data, error, loading, fetchData: login } = useApi({ method: 'POST', url: '/auth/login', body: formValues, token: null });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
+  useEffect(() => {
+    if (data.token) {
+      setCookie('token', data.token, { sameSite: 'none', secure: true });
+      setUserContext({ isLogged: true });
+      router.push('/profile');
+    }
+  }, [data]);
+
   const submit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
-        method: 'POST',
-        body: JSON.stringify(formValues),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      await response.json().then((result) => {
-        setCookie('token', result.token, { sameSite: 'none', secure: true });
-      }).then(() => {
-        setUserContext({ isLogged: true })
-        router.push('/profile');
-      });
-      // TODO: carefull with this in production ?
+      await login();
     } catch (err) {
       console.error(err);
     }
-  }
+  };
 
   return (
     <div className={styles.container}>

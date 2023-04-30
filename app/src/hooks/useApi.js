@@ -1,26 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const useApi = (url) => {
-  const [data, setData] = useState(null);
+const useApi = ({ method, url, body, token }) => {
+  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const result = await response.json();
-        setData(result);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchData();
-  }, [url]);
-
-  return { data, isLoading, error };
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${url}`, {
+        method: method,
+        ...body && {
+          body: JSON.stringify(body)
+        },
+        headers: {
+          "Content-Type": "Application/json",
+          ...token && {
+            "authorization": token
+          }
+        },
+      });
+      const result = await response.json();
+      setData(result);
+    } catch (err) {
+      setError(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  return { data, isLoading, error, fetchData };
 };
 
 export default useApi;

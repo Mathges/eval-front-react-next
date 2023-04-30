@@ -29,11 +29,22 @@ Auth will not be declined, cause the in the API, users and companies are in the 
 
 - [ ] wireframes (started, will do progressively)
 - [x] react-next init
-- [ ] connect front and back
-- [ ] headers footer and layout inits (header done, nested layouts done)
-- [ ] sign in/up feature
+- [x] connect front and back
+- [x] header and layout inits
+- [ ] sign in/up feature (SignIn all done, needs to handle back for SignUp)
 - [ ] search feature
 - [x] theming and theme switcher feature init
 - [x] i18n and lang switcher feature init
 - [x] generic components
 - [ ] integrate reset password to WFs and app
+
+## Notes
+
+### Forms
+
+Forms will miss front side validation before sending request.
+They'll need a bit a CSS improvements, and a refacto (especially for the register form). The pages could be made as 'static' component for better lisibility
+
+### i18n
+
+i18n needs a refacto, a per-page file for example

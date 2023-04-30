@@ -9,6 +9,8 @@ import LabeledInput from '@/components/LabeledInput/LabeledInput';
 import { IoArrowForward } from 'react-icons/io5';
 import { IoArrowBack } from 'react-icons/io5';
 import FreelanceFormCol from '@/components/FreelanceFormCol/FreelanceFormCol';
+import useApi from '@/hooks/useApi';
+import { useRouter } from 'next/router';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -25,6 +27,7 @@ const Register = () => {
   const [page, setPage] = useState(1);
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [formValues, setFormValues] = useState({});
+  const { data, error, isLoading, fetchData: register } = useApi({ method: 'POST', url: '/user/register', body: formValues, token: null });
 
   const nextPage = () => {
     if (formValues.password !== formValues.confirmPassword) {
@@ -49,10 +52,13 @@ const Register = () => {
       let currentState = formValues;
       currentState.freelance = { ...currentState.freelance, [name]: value }
       setFormValues(currentState);
+    } else if (name === "socialReason" || name === "status" || name === "siret" || name === "headOffice") {
+      let currentState = formValues;
+      currentState.company = { ...currentState.company, [name]: value }
     } else {
       setFormValues({ ...formValues, [name]: value });
     }
-  };
+  }
 
   const isFreelance = () => {
     // in case user clicked on wrong button and goes back
@@ -86,10 +92,16 @@ const Register = () => {
     nextPage();
   }
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    delete formValues.confirmPassword;
-    // console.log('finalForm', formValues);
+    try {
+      delete formValues.confirmPassword;
+      console.log('before register', formValues);
+      await register();
+      nextPage();
+    } catch (error) {
+      console.error(err);
+    }
   }
 
   const options = ['Skill 1', 'Skill 2', 'Skill 3'];
@@ -135,7 +147,7 @@ const Register = () => {
               <LabeledInput
                 labelTitle={t('form.inputs.labels.zipcode')}
                 inputType="text"
-                inputName="zipcode"
+                inputName="zipCode"
                 placeholder={t('form.inputs.placeholders.zipcode')}
                 onChange={handleChange}
                 width={"40%"}
@@ -149,6 +161,14 @@ const Register = () => {
                 width={"40%"}
               />
             </div>
+            <LabeledInput
+              labelTitle={t('form.inputs.labels.phoneNumber')}
+              inputType="text"
+              inputName="phoneNumber"
+              placeholder={t('form.inputs.placeholders.phoneNumber')}
+              onChange={handleChange}
+              width={"40%"}
+            />
             <LabeledInput
               labelTitle={t('form.inputs.labels.email')}
               inputType="text"
@@ -279,7 +299,7 @@ const Register = () => {
                 <LabeledInput
                   labelTitle={t('form.inputs.labels.headOfficeAddress')}
                   inputType="text"
-                  inputName="headOfficeAdress"
+                  inputName="headOffice"
                   placeholder={t('form.inputs.placeholders.headOfficeAddress')}
                   onChange={handleChange}
                   width={"90%"}
@@ -297,6 +317,11 @@ const Register = () => {
               />
             </div>
           </>
+        }
+        {page === 4 &&
+          <p>
+            {t('form.confirmEmail')}
+          </p>
         }
       </GenericForm>
     </div>
