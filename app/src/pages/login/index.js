@@ -82,7 +82,7 @@ const Login = () => {
       </GenericForm>
       <GenericLink
         link={"/register"}
-        content={t("links.to-register")}
+        content={t("links.toRegister")}
       />
     </div>
   );

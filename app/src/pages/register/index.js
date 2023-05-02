@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import styles from './index.module.scss';
@@ -10,7 +10,7 @@ import { IoArrowForward } from 'react-icons/io5';
 import { IoArrowBack } from 'react-icons/io5';
 import FreelanceFormCol from '@/components/FreelanceFormCol/FreelanceFormCol';
 import useApi from '@/hooks/useApi';
-import { useRouter } from 'next/router';
+import GenericLink from '@/components/GenericLink/GenericLink';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -28,15 +28,18 @@ const Register = () => {
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [formValues, setFormValues] = useState({});
   const { data, error, isLoading, fetchData: register } = useApi({ method: 'POST', url: '/user/register', body: formValues, token: null });
+  const { data: skillsFromApi, error: skillsError, isLoading: skillLoading, fetchData: getSkills } = useApi({ method: 'GET', url: '/skill', body: null, token: null });
+  const { data: professionsFromApi, error: professionsError, isLoading: professionLoading, fetchData: getProfessions } = useApi({ method: 'GET', url: '/profession', body: null, token: null });
 
   const nextPage = () => {
-    if (formValues.password !== formValues.confirmPassword) {
+    if (formValues.confirmPassword && formValues.password !== formValues.confirmPassword) {
       setPasswordMatch(false);
       return
     }
     let pageNumber = page;
     pageNumber += 1
     setPage(pageNumber);
+    console.log(page);
   }
 
   const previousPage = () => {
@@ -104,8 +107,10 @@ const Register = () => {
     }
   }
 
-  const options = ['Skill 1', 'Skill 2', 'Skill 3'];
-  const options2 = ['Profession 1', 'Profession 2', 'Profession 3'];
+  useEffect(() => {
+    getSkills();
+    getProfessions();
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -255,13 +260,13 @@ const Register = () => {
                 <div className={styles.selects}>
                   <FreelanceFormCol
                     subject={"skills"}
-                    options={options}
+                    options={skillsFromApi.skills}
                     formValues={formValues}
                     setFormValues={setFormValues}
                   />
                   <FreelanceFormCol
                     subject={"professions"}
-                    options={options2}
+                    options={professionsFromApi.professions}
                     formValues={formValues}
                     setFormValues={setFormValues}
                   />
@@ -323,6 +328,10 @@ const Register = () => {
             {t('form.confirmEmail')}
           </p>
         }
+        <GenericLink
+          link={"/login"}
+          content={t("links.toLogin")}
+        />
       </GenericForm>
     </div>
   );

@@ -72,6 +72,7 @@
         }
     },
     "links": {
-        "to-register": "Not registered yet ? Let's go !"
+        "toRegister": "Not registered yet ? Let's go !",
+        "toLogin": "Already registered ? Go login here !"
     }
 }

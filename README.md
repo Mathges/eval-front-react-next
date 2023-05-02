@@ -31,18 +31,19 @@ Auth will not be declined, cause the in the API, users and companies are in the 
 - [x] react-next init
 - [x] connect front and back
 - [x] header and layout inits
-- [ ] sign in/up feature (SignIn all done, needs to handle back for SignUp)
+- [x] sign in/up feature
 - [ ] search feature
 - [x] theming and theme switcher feature init
 - [x] i18n and lang switcher feature init
 - [x] generic components
 - [ ] integrate reset password to WFs and app
+- [ ] add skill and profession routes to backend
 
 ## Notes
 
 ### Forms
 
-Forms will miss front side validation before sending request.
+Forms will miss front side validation before sending request and some error handling.
 They'll need a bit a CSS improvements, and a refacto (especially for the register form). The pages could be made as 'static' component for better lisibility
 
 ### i18n
