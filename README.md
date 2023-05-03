@@ -37,7 +37,7 @@ Auth will not be declined, cause the in the API, users and companies are in the 
 - [x] i18n and lang switcher feature init
 - [x] generic components
 - [ ] integrate reset password to WFs and app
-- [ ] add skill and profession routes to backend
+- [x] add  get all skill and profession routes to backend
 
 ## Notes
 

@@ -1,6 +1,9 @@
 {
     "home": {
-        "test": "this is some english"
+        "presentation": "Welcome to FreeSearch ! \n Here we put Freelances et Companies on relation. \n Find your next job, or find your next working partner ! \n",
+        "freelancePresentation": "As Freelance, register, add skills or domain of expertise and wait for jobs proposals ! \n",
+        "companyPresentation": "As Company, create your jobs, look for corresponding profiles and ask for collaboration ! \n",
+        "goRegister": "So what are u waiting for ? Go register !"
     },
     "header": {
         "localeSwitcher": {

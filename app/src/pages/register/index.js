@@ -117,7 +117,6 @@ const Register = () => {
       <GenericForm
         onSubmit={submit}
         width={"40%"}
-        height={"80%"}
         title={t("form.titles.register")}
       >
         {page === 1 &&

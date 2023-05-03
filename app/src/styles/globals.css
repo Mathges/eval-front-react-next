@@ -27,13 +27,9 @@
 html,
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   background-color: var(--background-color);
   min-height: 100vh;
-}
-
-body {
-  background-color: var(--background-color);
 }
 
 a {

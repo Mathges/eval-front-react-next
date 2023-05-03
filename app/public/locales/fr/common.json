@@ -1,6 +1,9 @@
 {
     "home": {
-        "test": "ça c'est du francais"
+        "presentation": "Bienvenue sur FreeSearch ! \n Ce site permet de mettre en relation des entreprises et des freelances. \n Trouvez votre prochain contrat ou bien trouvez votre prochain équipier de travail ! \n",
+        "freelancePresentation": "En tant que Freelance, inscrivez-vous, renseignez vos compétences et vos domaines et attendez que les contrats viennent à vous ! \n \n",
+        "companyPresentation": "En tant qu'Entreprise , inscrivez-vous, créez vos missions, recherchez le profil correspondant à vos attentes et demandez une collaboration avec la personne souhaitée ! \n",
+        "goRegister": "Qu'attendez-vous pour vous inscrire ?"
     },
     "header": {
         "localeSwitcher": {
