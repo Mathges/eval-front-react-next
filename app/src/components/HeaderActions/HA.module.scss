@@ -1,0 +1,16 @@
+.header_actions {
+  display: flex;
+  align-items: center;
+
+  >* {
+    margin: 10px;
+  } 
+}
+
+.logout {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  color: var(--accent-color);
+}

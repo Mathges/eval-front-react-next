@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .inline_inputs {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .password_match {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .no_match_passwords {
+      color: red;
+      font-size: 0.7em;
+    }
+  }
+
+  .selects {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .form_bottom {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+
+    .password_rules {
+      max-width: 70%;
+      font-size: 0.8em;
+    }
+
+    .next_icon {
+      &:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+      }
+    }
+  }
+}

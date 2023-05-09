@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    width: 27px;
+    height: 27px;
+    color: var(--accent-color);
+    margin-left: 5px;;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .username {
+    color: var(--text-color);
+  }
+}

@@ -1,0 +1,81 @@
+{
+    "home": {
+        "presentation": "Welcome to FreeSearch ! \n Here we put Freelances et Companies on relation. \n Find your next job, or find your next working partner ! \n",
+        "freelancePresentation": "As Freelance, register, add skills or domain of expertise and wait for jobs proposals ! \n",
+        "companyPresentation": "As Company, create your jobs, look for corresponding profiles and ask for collaboration ! \n",
+        "goRegister": "So what are u waiting for ? Go register !"
+    },
+    "header": {
+        "localeSwitcher": {
+            "en": "English",
+            "fr": "French"
+        }
+    },
+    "navbar": {
+        "links": {
+            "home": "Home",
+            "proposals": "Proposals",
+            "profile": "Profile",
+            "tasks": "Contracts"
+        }
+    },
+    "form": {
+        "inputs": {
+            "labels": {
+                "email": "Email",
+                "password": "Password",
+                "firstName": "Firstname",
+                "lastName": "Lastname",
+                "address": "Address",
+                "zipcode": "Zipcode",
+                "city": "City",
+                "phoneNumber": "Phone Number",
+                "confirmPassword": "Confirm Password",
+                "socialReason": "Social Reason",
+                "status": "Status",
+                "siret": "Siret",
+                "headOfficeAddress": "Head Office Address",
+                "dailyTax": "dailyTax",
+                "experienceYears": "Experience Years"
+            },
+            "placeholders": {
+                "email": "Enter your email",
+                "password": "Enter your password",
+                "firstName": "Firstname",
+                "lastName": "Lastname",
+                "address": "Address",
+                "zipcode": "Zipcode",
+                "city": "City",
+                "phoneNumber": "Phone Number",
+                "confirmPassword": "Confirm Password",
+                "socialReason": "Social Reason",
+                "status": "ex SARL, EURL...",
+                "siret": "Siret",
+                "headOfficeAddress": "Head Office Address"
+            }
+        },
+        "titles": {
+            "login": "Sign In",
+            "register": "Sign Up"
+        },
+        "passwordRules": {
+            "noMatch": "Passwords don't match",
+            "characterLimit": "Password should contain at least 12 characters",
+            "characterTypes": "1 capital, 1 digit and 1 special character too"
+        },
+        "question": "Are you a freelance or a company ?",
+        "confirmEmail": "Successful register, a mail has been sent to the email provided to confirm inscription"
+    },
+    "buttons": {
+        "login": "Login",
+        "register": {
+            "freelance": "Freelance",
+            "company": "Company",
+            "register": "Sign Up"
+        }
+    },
+    "links": {
+        "toRegister": "Not registered yet ? Let's go !",
+        "toLogin": "Already registered ? Go login here !"
+    }
+}

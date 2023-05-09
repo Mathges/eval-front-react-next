@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  border-bottom: 1px solid var(--border-color);
+
+  .link {
+    width: 15%;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 10px;
+    padding: 15px;
+
+    &:hover {
+      border-bottom: 3px solid var(--primary-color);
+    }
+
+    &.active {
+      border-bottom: 3px solid var(--primary-color);
+    }
+  }
+}

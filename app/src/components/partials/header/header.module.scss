@@ -1,0 +1,21 @@
+.header {
+  max-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+
+  .banner {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+
+    * {
+      margin: 3px;
+
+      &.title {
+        color: var(--text-color);
+      }
+    }
+  }
+}
